@@ -74,6 +74,6 @@ public class movement : MonoBehaviour
         if (other.transform.tag == "Coins")
         {
             Destroy(other.gameObject);
-        }
+        } //hej
     }
 }
