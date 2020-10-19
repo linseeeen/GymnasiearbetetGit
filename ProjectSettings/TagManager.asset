@@ -15,7 +15,7 @@ TagManager:
   - 
   - 
   - Ground
-  - 
+  - Coins
   - 
   - 
   - 
@@ -44,6 +44,15 @@ TagManager:
     locked: 0
   - name: bakgrund
     uniqueID: 764309255
+    locked: 0
+  - name: Ljus
+    uniqueID: 1107662725
+    locked: 0
+  - name: Tiles
+    uniqueID: 2140480407
+    locked: 0
+  - name: coins + skyltar
+    uniqueID: 548604311
     locked: 0
   - name: spelare
     uniqueID: 1902398419
