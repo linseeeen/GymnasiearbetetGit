@@ -16,13 +16,19 @@ public class SceneLoader : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Return))
+        Scene currentScene = SceneManager.GetActiveScene ();
+        string sceneName = currentScene.name;
+        if (sceneName == "StartScreen")
         {
-            // Use a coroutine to load the Scene in the background
-            StartCoroutine(LoadYourAsyncScene());
+            if (Input.GetKeyDown(KeyCode.Return))
+            {
+                // Use a coroutine to load the Scene in the background
+                StartCoroutine(LoadCoins());
+            }
         }
+        
     }
-    IEnumerator LoadYourAsyncScene()
+    IEnumerator LoadCoins()
     {
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync("Coins");
 
