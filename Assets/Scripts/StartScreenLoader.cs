@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 
 
-public class SceneLoader : MonoBehaviour
+public class StartScreenLoader : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -22,11 +22,26 @@ public class SceneLoader : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Return))
             {
-                // Use a coroutine to load the Scene in the background
+                StartCoroutine(LoadInstructions());
+            }
+        }
+        if (sceneName == "Instruktioner")
+        {
+            if (Input.GetKeyDown(KeyCode.Return))
+            {
                 StartCoroutine(LoadCoins());
             }
         }
         
+    }
+    IEnumerator LoadInstructions()
+    {
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync("Instruktioner");
+
+        while (!asyncLoad.isDone)
+        {
+            yield return null;
+        }
     }
     IEnumerator LoadCoins()
     {
