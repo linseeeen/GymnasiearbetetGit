@@ -1843,7 +1843,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3.5
-  jump: 7.5
+  jump: 8
   groundCheck: {fileID: 1134625587}
   groundCheckL: {fileID: 1007263652}
   groundCheckR: {fileID: 1175643415}
