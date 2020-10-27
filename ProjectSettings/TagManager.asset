@@ -7,7 +7,7 @@ TagManager:
   - Coins
   - ScenLaddareCoins
   - ScenLaddareSkylt
-  - SceneLaddareLjus
+  - ScenLaddareLjus
   layers:
   - Default
   - TransparentFX
