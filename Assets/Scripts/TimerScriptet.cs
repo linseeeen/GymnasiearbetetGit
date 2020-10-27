@@ -123,6 +123,7 @@ public class TimerScriptet : MonoBehaviour
         while (!asyncLoad.isDone)
         {
             yield return null;
+            //hej
         }
     }
 
