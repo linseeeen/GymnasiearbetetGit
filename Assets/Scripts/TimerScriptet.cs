@@ -51,7 +51,7 @@ public class TimerScriptet : MonoBehaviour
         {
             if(Input.GetKeyDown(KeyCode.Return))
             {
-                StartCoroutine(LoadSign());
+                StartCoroutine(LoadEnd());
             }
         }
     }
@@ -110,6 +110,15 @@ public class TimerScriptet : MonoBehaviour
     IEnumerator LoadSound()
     {
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync("Ljud");
+
+        while (!asyncLoad.isDone)
+        {
+            yield return null;
+        }
+    }
+    IEnumerator LoadEnd()
+    {
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync("Avslut");
 
         while (!asyncLoad.isDone)
         {
