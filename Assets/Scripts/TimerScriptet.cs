@@ -11,6 +11,7 @@ public class TimerScriptet : MonoBehaviour
 
     float timer = 0.0f;
     bool timerStop = false;
+    bool nyckel = false;
     int seconds;
 
     void Update()
@@ -22,17 +23,26 @@ public class TimerScriptet : MonoBehaviour
             seconds = (int) timer;
             Debug.Log(seconds);
         }
+        if(nyckel == true)
+            {
+                if(Input.GetKeyDown(KeyCode.Return))
+                {
+                    StartCoroutine(LoadSign());
+                }
+            }
     }
 
     private void OnTriggerEnter2D(Collider2D other) 
     {
+        
         //Ändra tag till scenebytarens tag
        if (other.transform.tag == "ScenLaddareCoins")
         {
             timerStop = true;
             string visaTimerText = seconds.ToString();
             timerText.text = visaTimerText;
-        } 
+            nyckel = true;
+        }
     }
     IEnumerator LoadSign()
     {
