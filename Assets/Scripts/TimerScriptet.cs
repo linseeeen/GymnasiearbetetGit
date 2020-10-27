@@ -24,7 +24,7 @@ public class TimerScriptet : MonoBehaviour
         }
     }
 
-    private void OnTriggerExit2D(Collider2D other) 
+    private void OnTriggerEnter2D(Collider2D other) 
     {
         //Ändra tag till scenebytarens tag
        if (other.transform.tag == "ScenLaddareCoins")
