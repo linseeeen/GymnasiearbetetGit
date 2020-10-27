@@ -11,7 +11,10 @@ public class TimerScriptet : MonoBehaviour
 
     float timer = 0.0f;
     bool timerStop = false;
-    bool nyckel = false;
+    bool nyckelCoins = false;
+    bool nyckelSkylt = false;
+    bool nyckelLjus = false;
+    bool nyckelLjud = false;
     int seconds;
 
     void Update()
@@ -23,13 +26,34 @@ public class TimerScriptet : MonoBehaviour
             seconds = (int) timer;
             Debug.Log(seconds);
         }
-        if(nyckel == true)
+        if(nyckelCoins == true)
+        {
+            if(Input.GetKeyDown(KeyCode.Return))
             {
-                if(Input.GetKeyDown(KeyCode.Return))
-                {
-                    StartCoroutine(LoadSign());
-                }
+                StartCoroutine(LoadSign());
             }
+        }
+        if(nyckelSkylt == true)
+        {
+            if(Input.GetKeyDown(KeyCode.Return))
+            {
+                StartCoroutine(LoadLight());
+            }
+        }
+        if(nyckelLjus == true)
+        {
+            if(Input.GetKeyDown(KeyCode.Return))
+            {
+                StartCoroutine(LoadSound());
+            }
+        }
+        if(nyckelLjud == true)
+        {
+            if(Input.GetKeyDown(KeyCode.Return))
+            {
+                StartCoroutine(LoadSign());
+            }
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other) 
@@ -41,7 +65,28 @@ public class TimerScriptet : MonoBehaviour
             timerStop = true;
             string visaTimerText = seconds.ToString();
             timerText.text = visaTimerText;
-            nyckel = true;
+            nyckelCoins = true;
+        }
+        if (other.transform.tag == "ScenLaddareSkylt")
+        {
+            timerStop = true;
+            string visaTimerText = seconds.ToString();
+            timerText.text = visaTimerText;
+            nyckelSkylt = true;
+        }
+        if (other.transform.tag == "ScenLaddareLjus")
+        {
+            timerStop = true;
+            string visaTimerText = seconds.ToString();
+            timerText.text = visaTimerText;
+            nyckelLjus = true;
+        }
+        if (other.transform.tag == "ScenLaddareLjud")
+        {
+            timerStop = true;
+            string visaTimerText = seconds.ToString();
+            timerText.text = visaTimerText;
+            nyckelLjud = true;
         }
     }
     IEnumerator LoadSign()
