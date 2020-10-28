@@ -23,8 +23,8 @@ public class TimerScriptet : MonoBehaviour
         {
             timer += Time.deltaTime;
             // raderna under ändrar timern till sekunder, oklart om vi behöver det?
-            seconds = (int) timer;
-            Debug.Log(seconds);
+            // seconds = (int) timer;
+            Debug.Log(timer);
         }
         if(nyckelCoins == true)
         {
@@ -63,28 +63,28 @@ public class TimerScriptet : MonoBehaviour
        if (other.transform.tag == "ScenLaddareCoins")
         {
             timerStop = true;
-            string visaTimerText = seconds.ToString();
+            string visaTimerText = timer.ToString("F2");
             timerText.text = visaTimerText;
             nyckelCoins = true;
         }
         if (other.transform.tag == "ScenLaddareSkylt")
         {
             timerStop = true;
-            string visaTimerText = seconds.ToString();
+            string visaTimerText = timer.ToString("F2");
             timerText.text = visaTimerText;
             nyckelSkylt = true;
         }
         if (other.transform.tag == "ScenLaddareLjus")
         {
             timerStop = true;
-            string visaTimerText = seconds.ToString();
+            string visaTimerText = timer.ToString("F2");
             timerText.text = visaTimerText;
             nyckelLjus = true;
         }
         if (other.transform.tag == "ScenLaddareLjud")
         {
             timerStop = true;
-            string visaTimerText = seconds.ToString();
+            string visaTimerText = timer.ToString("F2");
             timerText.text = visaTimerText;
             nyckelLjud = true;
         }
